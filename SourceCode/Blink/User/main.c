@@ -30,8 +30,11 @@
 #include "stm8s.h"
 
 /* Private defines -----------------------------------------------------------*/
-#define LED_PORT (GPIOC)
-#define LED_PIN  (GPIO_PIN_7)
+#define LED_PORT (GPIOF)
+#define LED_PIN  (GPIO_PIN_4)
+
+#define LED_PORT1 (GPIOA)
+#define LED_PIN1  (GPIO_PIN_3)
 
 /* Private function prototypes -----------------------------------------------*/
 void selfDelay(void);
@@ -42,10 +45,14 @@ void main(void)
 {
   GPIO_Init(LED_PORT, (GPIO_Pin_TypeDef)LED_PIN, GPIO_MODE_OUT_PP_HIGH_FAST);
   
+  GPIO_Init(LED_PORT1, (GPIO_Pin_TypeDef)LED_PIN1, GPIO_MODE_OUT_PP_HIGH_FAST);
+  GPIO_WriteReverse(LED_PORT1, LED_PIN1);
+  
   /* Infinite loop */
   while (1)
   {
     GPIO_WriteReverse(LED_PORT, LED_PIN);
+    GPIO_WriteReverse(LED_PORT1, LED_PIN1);
     selfDelay();
   }
 }
@@ -53,7 +60,7 @@ void main(void)
 void selfDelay(void)
 {
   int i = 0;
-  for (; i <= 10000; i++)
+  for (; i <= 30000; i++)
   {
   }
 }

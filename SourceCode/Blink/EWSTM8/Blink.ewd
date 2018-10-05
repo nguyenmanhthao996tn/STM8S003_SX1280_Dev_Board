@@ -179,11 +179,11 @@
                 </option>
                 <option>
                     <name>STlinkSuppressLoad</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>STlinkVerifyLoad</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>STlinkLogFileOver</name>
